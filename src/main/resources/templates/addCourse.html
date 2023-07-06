@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" role="form" th:action="@{/courses/saveCourse}" th:object="${course}">
+        <div>
+            <div><label>Tên khóa học:</label>
+                <input  placeholder="Course Name" th:field="${course.courseName}"/>
+            </div>
+            <div><label>Lời giới thiệu:</label>
+                <input  placeholder="Course Caption" th:field="${course.courseCaption}"/>
+            </div>
+            <div><label>Học phí:</label>
+                <input  placeholder="Course Price" th:field="${course.coursePrice}"/>
+            </div>
+            <div><label>Học phí đã giảm:</label>
+                <input  placeholder="Course Discount" th:field="${course.courseDiscount}"/>
+            </div>
+            <div><label>Người đào tạo:</label>
+                <input  placeholder="Course Creator" th:field="${course.courseCreator}"/>
+            </div>
+           
+            <div>
+                <input type="submit" value="Submit"/> <input type="reset" value="Clear"/>
+            </div>
+            <input th:field="${course.idCourse}" type="hidden"/>
+        </div>
+    </form>
+</body>
+</html>

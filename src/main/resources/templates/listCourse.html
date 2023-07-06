@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div style="width: 100%; text-align: center; box-sizing: border-box;">
+		<div style="text-align: center;">
+			<a class="btn btn-primary" th:href="@{/courses/showAddCourse}"
+				style="text-align: center;">Thêm khóa học</a>
+
+			<div class="card" style="width: 18rem" th:each="course:${courses}" >
+				<img class="card-img-top"
+					src="https://www.wildnettechnologies.com/wp-content/uploads/2019/04/Java-WD-final.jpg"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title" th:text="${course.courseName}"></h5>
+					<p class="card-text" th:text="${course.courseCaption}"></p>
+					Học phí:
+					<del>
+						<p class="card-text" th:text="${course.coursePrice}"></p>
+					</del>
+					Học phí giảm còn:
+					<p class="card-text" th:text="${course.courseDiscount}"></p>
+					Người đào tạo:
+					<p class="card-text" th:text="${course.courseCreator}"></p>
+					<a href="#" class="btn btn-primary">Đăng ký</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
